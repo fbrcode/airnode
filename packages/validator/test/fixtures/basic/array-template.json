@@ -1,0 +1,17 @@
+{
+  "arrayParameter": {
+    "__maxSize": 2,
+    "__arrayItem": {
+      "outer": {
+        "inner": {}
+      }
+    }
+  },
+  "moreArrays": {
+    "__objectItem": {
+      "__arrayItem": {
+        "value": {}
+      }
+    }
+  }
+}

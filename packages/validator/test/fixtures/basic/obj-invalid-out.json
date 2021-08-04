@@ -1,0 +1,17 @@
+{
+  "valid": false,
+  "messages": [
+    {
+      "level": "error",
+      "message": "Missing parameter invalid.name"
+    },
+    {
+      "level": "error",
+      "message": "Missing parameter specification.name"
+    },
+    {
+      "level": "warning",
+      "message": "Extra field: invalid.value"
+    }
+  ]
+}

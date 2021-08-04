@@ -1,0 +1,22 @@
+{
+  "arrayParameter": [
+    {
+      "outer": {
+        "inner": "value1"
+      }
+    },
+    {
+      "outer": {
+        "inner": "value2"
+      }
+    }
+  ],
+  "moreArrays": {
+    "array1": [
+      {
+        "value": "value"
+      }
+    ],
+    "array2": []
+  }
+}

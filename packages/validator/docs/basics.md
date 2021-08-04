@@ -17,6 +17,8 @@ Most basic validator template can simply include keys of all required parameters
 
 ### Template
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=../test/fixtures/basic/valid-template.json) -->
+<!-- The below code snippet is automatically added from ../test/fixtures/basic/valid-template.json -->
 ```json
 {
   "server": {
@@ -31,10 +33,13 @@ Most basic validator template can simply include keys of all required parameters
   }
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ---
 ### Valid specification
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=../test/fixtures/basic/valid-specs.json) -->
+<!-- The below code snippet is automatically added from ../test/fixtures/basic/valid-specs.json -->
 ```json
 {
   "component": {
@@ -49,19 +54,25 @@ Most basic validator template can simply include keys of all required parameters
   }
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ### Expected output
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=../test/fixtures/basic/valid-out.json) -->
+<!-- The below code snippet is automatically added from ../test/fixtures/basic/valid-out.json -->
 ```json
 {
   "valid": true,
   "messages": []
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ---
 ### Invalid specification
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=../test/fixtures/basic/invalid-specs.json) -->
+<!-- The below code snippet is automatically added from ../test/fixtures/basic/invalid-specs.json -->
 ```json
 {
   "server": {
@@ -70,19 +81,32 @@ Most basic validator template can simply include keys of all required parameters
   "component": {}
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ### Expected output
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=../test/fixtures/basic/invalid-out.json) -->
+<!-- The below code snippet is automatically added from ../test/fixtures/basic/invalid-out.json -->
 ```json
 {
   "valid": false,
   "messages": [
-    { "level": "error", "message": "Missing parameter server.url" },
-    { "level": "error", "message": "Missing parameter component.securityScheme" },
-    { "level": "warning", "message": "Extra field: server.extra" }
+    {
+      "level": "error",
+      "message": "Missing parameter server.url"
+    },
+    {
+      "level": "error",
+      "message": "Missing parameter component.securityScheme"
+    },
+    {
+      "level": "warning",
+      "message": "Extra field: server.extra"
+    }
   ]
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 After closer examination of error messages it might seem that there is no error message about missing parameters `component.securityScheme.in`, `component.securityScheme.name` and `component.securityScheme.type`. This is caused by missing `component.securityScheme`, which contains these parameters. If parameter is not present in specification, children of this parameter will not be checked and no error message will be returned for them.
 
@@ -94,6 +118,8 @@ In some instances specification might contain key that is not predefined, to all
 
 ### Template
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=../test/fixtures/basic/obj-template.json) -->
+<!-- The below code snippet is automatically added from ../test/fixtures/basic/obj-template.json -->
 ```json
 {
   "__objectItem": {
@@ -101,10 +127,13 @@ In some instances specification might contain key that is not predefined, to all
   }
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ---
 ### Valid specification
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=../test/fixtures/basic/obj-valid-specs.json) -->
+<!-- The below code snippet is automatically added from ../test/fixtures/basic/obj-valid-specs.json -->
 ```json
 {
   "any": {
@@ -115,10 +144,13 @@ In some instances specification might contain key that is not predefined, to all
   }
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ---
 ### Invalid specification
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=../test/fixtures/basic/obj-invalid-specs.json) -->
+<!-- The below code snippet is automatically added from ../test/fixtures/basic/obj-invalid-specs.json -->
 ```json
 {
   "invalid": {
@@ -127,19 +159,32 @@ In some instances specification might contain key that is not predefined, to all
   "specification": {}
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ### Expected output
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=../test/fixtures/basic/obj-invalid-out.json) -->
+<!-- The below code snippet is automatically added from ../test/fixtures/basic/obj-invalid-out.json -->
 ```json
 {
   "valid": false,
   "messages": [
-    { "level": "error", "message": "Missing parameter invalid.name" },
-    { "level": "error", "message": "Missing parameter specification.name" },
-    { "level": "warning", "message": "Extra field: invalid.value" }
+    {
+      "level": "error",
+      "message": "Missing parameter invalid.name"
+    },
+    {
+      "level": "error",
+      "message": "Missing parameter specification.name"
+    },
+    {
+      "level": "warning",
+      "message": "Extra field: invalid.value"
+    }
   ]
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 # Array item
 
@@ -149,6 +194,8 @@ Contents of `__arrayItem` define structure of items that are inside the array, w
 
 ### Template
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=../test/fixtures/basic/array-template.json) -->
+<!-- The below code snippet is automatically added from ../test/fixtures/basic/array-template.json -->
 ```json
 {
   "arrayParameter": {
@@ -168,11 +215,14 @@ Contents of `__arrayItem` define structure of items that are inside the array, w
   }
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ---
 
 ### Valid specification
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=../test/fixtures/basic/array-valid-specs.json) -->
+<!-- The below code snippet is automatically added from ../test/fixtures/basic/array-valid-specs.json -->
 ```json
 {
   "arrayParameter": [
@@ -197,11 +247,14 @@ Contents of `__arrayItem` define structure of items that are inside the array, w
   }
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ---
 
 ### Invalid specification
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=../test/fixtures/basic/array-invalid-specs.json) -->
+<!-- The below code snippet is automatically added from ../test/fixtures/basic/array-invalid-specs.json -->
 ```json
 {
   "arrayParameter": [
@@ -228,19 +281,35 @@ Contents of `__arrayItem` define structure of items that are inside the array, w
   }
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ### Expected output
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=../test/fixtures/basic/array-invalid-out.json) -->
+<!-- The below code snippet is automatically added from ../test/fixtures/basic/array-invalid-out.json -->
 ```json
 {
   "valid": false,
   "messages": [
-    { "level": "error", "message": "arrayParameter must contain 2 or less items" },
-    { "level": "error", "message": "Missing parameter arrayParameter[2].outer.inner" },
-    { "level": "error", "message": "Missing parameter moreArrays.array1[0].value" },
-    { "level": "warning", "message": "Extra field: moreArrays.array1[0].invalid" }
+    {
+      "level": "error",
+      "message": "arrayParameter must contain 2 or less items"
+    },
+    {
+      "level": "error",
+      "message": "Missing parameter arrayParameter[2].outer.inner"
+    },
+    {
+      "level": "error",
+      "message": "Missing parameter moreArrays.array1[0].value"
+    },
+    {
+      "level": "warning",
+      "message": "Extra field: moreArrays.array1[0].invalid"
+    }
   ]
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ---

@@ -1,0 +1,17 @@
+{
+  "valid": false,
+  "messages": [
+    {
+      "level": "error",
+      "message": "Missing parameter server.url"
+    },
+    {
+      "level": "error",
+      "message": "Missing parameter component.securityScheme"
+    },
+    {
+      "level": "warning",
+      "message": "Extra field: server.extra"
+    }
+  ]
+}

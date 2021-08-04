@@ -1,0 +1,12 @@
+{
+  "component": {
+    "securityScheme": {
+      "in": "query",
+      "name": "example",
+      "type": {}
+    }
+  },
+  "server": {
+    "url": "https://just.example.com"
+  }
+}

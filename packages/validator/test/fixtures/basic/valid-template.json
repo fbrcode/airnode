@@ -1,0 +1,12 @@
+{
+  "server": {
+    "url": {}
+  },
+  "component": {
+    "securityScheme": {
+      "in": {},
+      "name": {},
+      "type": {}
+    }
+  }
+}
