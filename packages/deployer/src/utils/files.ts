@@ -29,7 +29,7 @@ export function writeReceiptFile(
       xpub: deriveXpub(mnemonic),
     },
     deployment: {
-      airnodeIdShort: shortenAirnodeId(airnodeId),
+      airnodeAddressShort: shortenAirnodeId(airnodeId),
       cloudProvider: config.nodeSettings.cloudProvider,
       region: config.nodeSettings.region,
       stage: config.nodeSettings.stage,

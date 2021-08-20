@@ -99,7 +99,7 @@ describe('initialize', () => {
           settings: {
             airnodeAdmin: '0x5e0051B74bb4006480A1b548af9F1F0e0954F410',
             airnodeId: '0x19255a4ec31e89cea54d1f125db7536e874ab4a96b4d4f6438668b6bb10a6adb',
-            airnodeIdShort: '19255a4',
+            airnodeAddressShort: '19255a4',
             authorizers: [ethers.constants.AddressZero],
             blockHistoryLimit: 300,
             chainId: '1',
@@ -134,7 +134,7 @@ describe('initialize', () => {
           settings: {
             airnodeAdmin: '0x5e0051B74bb4006480A1b548af9F1F0e0954F410',
             airnodeId: '0x19255a4ec31e89cea54d1f125db7536e874ab4a96b4d4f6438668b6bb10a6adb',
-            airnodeIdShort: '19255a4',
+            airnodeAddressShort: '19255a4',
             authorizers: [ethers.constants.AddressZero],
             blockHistoryLimit: 300,
             chainId: '3',

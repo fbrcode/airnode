@@ -34,7 +34,7 @@ export async function testApi(
 
   const workerOpts: WorkerOptions = {
     cloudProvider: config.nodeSettings.cloudProvider,
-    airnodeIdShort: wallet.getAirnodeIdShort(masterHDNode),
+    airnodeAddressShort: wallet.getairnodeAddressShort(masterHDNode),
     stage: config.nodeSettings.stage,
     region: config.nodeSettings.region,
   };

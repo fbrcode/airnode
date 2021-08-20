@@ -9,7 +9,7 @@ export interface AirnodeWallet {
 
 export interface Deployment {
   nodeVersion: string;
-  airnodeIdShort: string;
+  airnodeAddressShort: string;
   cloudProvider: 'aws' | 'local';
   region: string;
   stage: string;

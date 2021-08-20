@@ -83,7 +83,7 @@ yargs(hideBin(process.argv))
         description: 'Path to receipt file',
         type: 'string',
       },
-      airnodeIdShort: {
+      airnodeAddressShort: {
         alias: 'a',
         description: 'Airnode ID (short version)',
         type: 'string',
@@ -108,7 +108,7 @@ yargs(hideBin(process.argv))
       logger.debugMode(args.debug as boolean);
       logger.debug(`Running command ${args._[0]} with arguments ${longArguments(args)}`);
       const receiptRemove = !!args.receipt;
-      const descriptiveArgs = ['airnodeIdShort', 'stage', 'cloudProvider', 'region'];
+      const descriptiveArgs = ['airnodeAddressShort', 'stage', 'cloudProvider', 'region'];
       const descriptiveArgsProvided = intersection(descriptiveArgs, keys(args));
       const descriptiveArgsMissing = difference(descriptiveArgs, descriptiveArgsProvided);
 
@@ -122,7 +122,7 @@ yargs(hideBin(process.argv))
       }
 
       if (isEmpty(descriptiveArgsMissing)) {
-        await runCommand(() => remove(args.airnodeIdShort!, args.stage!, args.cloudProvider!, args.region!));
+        await runCommand(() => remove(args.airnodeAddressShort!, args.stage!, args.cloudProvider!, args.region!));
         return;
       }
 

@@ -67,15 +67,15 @@ export async function deploy(configFile: string, secretsFile: string, receiptFil
   writeReceiptFile(receiptFile, mnemonic, config, output);
 }
 
-export async function remove(airnodeIdShort: string, stage: string, cloudProvider: string, region: string) {
-  await removeAirnode(airnodeIdShort, stage, cloudProvider, region);
+export async function remove(airnodeAddressShort: string, stage: string, cloudProvider: string, region: string) {
+  await removeAirnode(airnodeAddressShort, stage, cloudProvider, region);
 }
 
 export async function removeWithReceipt(receiptFilename: string) {
   const receipt = parseReceiptFile(receiptFilename);
-  const { airnodeIdShort, cloudProvider, region, stage } = receipt.deployment;
+  const { airnodeAddressShort, cloudProvider, region, stage } = receipt.deployment;
   try {
-    await remove(airnodeIdShort, stage, cloudProvider, region);
+    await remove(airnodeAddressShort, stage, cloudProvider, region);
   } catch (err) {
     logger.warn(`Failed removing configuration, skipping`);
     logger.warn(err.toString());
