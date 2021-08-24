@@ -15,7 +15,7 @@ export enum RequestErrorCode {
   TemplateNotFound = 3,
   TemplateParameterDecodingFailed = 4,
   TemplateInvalid = 5,
-  DesignatedWalletInvalid = 6,
+  SponsorWalletInvalid = 6,
   AuthorizationNotFound = 7,
   Unauthorized = 8,
   PendingWithdrawal = 9,
@@ -55,7 +55,7 @@ export interface RequestFulfillment {
 }
 
 export type ClientRequest<T extends {}> = T & {
-  readonly designatedWallet: string;
+  readonly sponsorWallet: string;
   readonly id: string;
   readonly errorCode?: RequestErrorCode;
   readonly fulfillment?: RequestFulfillment;
@@ -185,7 +185,7 @@ export interface AggregatedApiCall {
   readonly requesterIndex: string;
   readonly airnodeAddress: string;
   readonly clientAddress: string;
-  readonly designatedWallet: string;
+  readonly sponsorWallet: string;
   readonly chainId: string;
   readonly endpointId: string;
   readonly endpointName?: string;
