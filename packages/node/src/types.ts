@@ -54,7 +54,7 @@ export interface RequestFulfillment {
   readonly hash: string;
 }
 
-export type ClientRequest<T extends {}> = T & {
+export type Request<T extends {}> = T & {
   readonly sponsorWallet: string;
   readonly id: string;
   readonly errorCode?: RequestErrorCode;
@@ -72,7 +72,7 @@ export type ApiCallType = 'regular' | 'full';
 export interface ApiCall {
   readonly airnodeAddress: string | null;
   readonly chainId: string;
-  readonly clientAddress: string;
+  readonly requesterAddress: string;
   readonly encodedParameters: string;
   readonly endpointId: string | null;
   readonly fulfillAddress: string;
@@ -97,8 +97,8 @@ export interface Withdrawal {
 }
 
 export interface GroupedRequests {
-  readonly apiCalls: ClientRequest<ApiCall>[];
-  readonly withdrawals: ClientRequest<Withdrawal>[];
+  readonly apiCalls: Request<ApiCall>[];
+  readonly withdrawals: Request<Withdrawal>[];
 }
 
 export interface ProviderSettings extends CoordinatorSettings {
@@ -184,7 +184,7 @@ export interface AggregatedApiCall {
   readonly id: string;
   readonly sponsorAddress: string;
   readonly airnodeAddress: string;
-  readonly clientAddress: string;
+  readonly requesterAddress: string;
   readonly sponsorWallet: string;
   readonly chainId: string;
   readonly endpointId: string;
