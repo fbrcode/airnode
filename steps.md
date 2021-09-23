@@ -394,9 +394,110 @@ Child worker:
 
 3. OIS Setup
 
+***>> Start hardhat eth node <<***:
 
-4. Airnode execution
+```sh
+cd ~/job/inveniam/repos/fbrcode/airnode/packages/operation
+yarn run dev:eth-node
+```
+
+**Output**:
+
+```txt
+yarn run v1.22.10
+$ hardhat node
+Started HTTP and WebSocket JSON-RPC server at http://127.0.0.1:8545/
+
+Accounts
+========
+Account #0: 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266 (1000000 ETH)
+Private Key: 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+
+Account #1: 0x70997970c51812dc3a010c7d01b50e0d17dc79c8 (1000000 ETH)
+Private Key: 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d
+
+Account #2: 0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc (1000000 ETH)
+Private Key: 0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a
+
+Account #3: 0x90f79bf6eb2c4f870365e785982e1f101e93b906 (1000000 ETH)
+Private Key: 0x7c852118294e51e653712a81e05800f419141751be58f605c371e15141b007a6
+
+Account #4: 0x15d34aaf54267db7d7c367839aaf71a00a2c6a65 (1000000 ETH)
+Private Key: 0x47e179ec197488593b187f80a00eb0da91f1b9d0b13f8733639f19c30a34926a
+```
+
+***>> Deploy contract over started hardhat eth node <<***:
+
+```sh
+cd ~/job/inveniam/repos/fbrcode/airnode/packages/operation
+yarn run dev:eth-deploy
+```
+
+**Output**:
+
+```txt
+yarn run v1.22.10
+$ ts-node src/scripts/evm-dev-deploy.ts
+--> Loading configuration...
+config =  {
+  deployerIndex: 0,
+  airnodes: {
+    CurrencyConverterAirnode: {
+      airnodeAdmin: '0x5e0051B74bb4006480A1b548af9F1F0e0954F410',
+      mnemonic: 'achieve climb couple wait accident symbol spy blouse reduce foil echo label',
+      authorizers: [Array],
+      endpoints: [Object],
+      templates: [Object]
+    }
+  },
+  authorizers: { public: '0x0000000000000000000000000000000000000000' },
+  clients: { MockAirnodeRrpClientFactory: { endorsers: [Array] } },
+  requesters: [
+    { id: 'alice', airnodes: [Object] },
+    { id: 'bob', airnodes: [Object] }
+  ],
+  requests: [
+    {
+      requesterId: 'bob',
+      type: 'regular',
+      airnode: 'CurrencyConverterAirnode',
+      template: 'template-1',
+      client: 'MockAirnodeRrpClientFactory',
+      fulfillFunctionName: 'fulfill',
+      parameters: [Array]
+    },
+    {
+      requesterId: 'bob',
+      type: 'full',
+      airnode: 'CurrencyConverterAirnode',
+      endpoint: 'convertToUSD',
+      oisTitle: 'Currency Converter API',
+      client: 'MockAirnodeRrpClientFactory',
+      fulfillFunctionName: 'fulfill',
+      parameters: [Array]
+    },
+    {
+      requesterId: 'alice',
+      type: 'withdrawal',
+      airnode: 'CurrencyConverterAirnode',
+      destination: 'alice'
+    }
+  ]
+}
+--> Deploying contracts...
+--> Assigning wallets...
+--> Funding wallets...
+--> Setting Airnode parameters...
+--> Endorsing client contracts...
+--> Creating templates...
+--> Deployment successful!
+--> Saving deployment...
+--> Deployment saved!
+Done in 4.92s.
+```
+
+1. Airnode execution
 
 
-5. Client contract call
+2. Client contract call
 
