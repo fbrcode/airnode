@@ -1,0 +1,9 @@
+{
+    "success": true,
+    "measurement_title": "Point_in_Time Environmental, Social, Governance (ESG) Score",
+    "measurement_description": "Provide building specific sensors data values (temperature, CO2, etc) by zone (lobby, 1st floor, etc) in a given point in time.",
+    "pit_option": "latest",
+    "pit_executed_at": "2021-09-09T19:51:20.888Z",
+    "sensor_temperature_unit": "F (Fahrenheit)",
+    "sensor_co2_unit": "PPM (Parts Per Million)"
+}

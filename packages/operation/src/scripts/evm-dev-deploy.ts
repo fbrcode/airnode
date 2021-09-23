@@ -4,6 +4,7 @@ import * as io from '../evm/io';
 async function run() {
   console.log('--> Loading configuration...');
   const config = io.loadConfig();
+  console.log('config = ', config);
 
   const state1 = deploy.buildDeployState(config);
 

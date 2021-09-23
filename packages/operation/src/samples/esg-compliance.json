@@ -1,0 +1,7 @@
+{
+    "success": true,
+    "sensor_temp_threshold_max": 80,
+    "sensor_temp_threshold_min": 70,
+    "sensor_co2_threshold_max": 20,
+    "sensor_co2_threshold_min": 5
+}
