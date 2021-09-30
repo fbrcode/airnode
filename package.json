@@ -64,5 +64,6 @@
     "hooks": {
       "pre-commit": "yarn run pretty-quick && yarn run lint"
     }
-  }
+  },
+  "version": "0.0.0"
 }
