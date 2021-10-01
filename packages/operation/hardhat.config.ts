@@ -12,6 +12,7 @@ const config: HardhatUserConfig = {
         // others accounts. So we need to make sure it's got enough ETH. The
         // below amount is 1 million ETH.
         accountsBalance: '1000000000000000000000000',
+        count: 5,
       },
     },
     localhost: {
