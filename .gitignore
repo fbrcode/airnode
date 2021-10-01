@@ -15,3 +15,6 @@ coverage.json
 # Alternative package.json files for publishing
 # Will be removed in the future
 package.json_
+
+# Mac files
+.DS_Store
