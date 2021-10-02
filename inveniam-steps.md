@@ -5,9 +5,7 @@
 Get API3 airnode code...
 
 ```sh
-git clone git@github.com:fbrcode/airnode.git
-cd airnode
-git checkout pre-alpha
+git clone git@github.com:fbrcode/airnode.git --branch pre-alpha && cd airnode
 ```
 
 Set nvm to use LTS version...
@@ -508,7 +506,29 @@ Then visit [](http://localhost:8000) in your browser.
 
 ## 7. OIS Setup
 
-???
+Use OAS -> OIS convertion tooling available on master branch.
+
+```sh
+git clone git@github.com:fbrcode/airnode.git --branch master oas-ois-converter && cd oas-ois-converter
+cd packages/validator
+```
+
+Run the convertion from OAS to OIS...
+
+```sh
+yarn run convert \
+--from="oas" \
+--to="ois" \
+--specs="exampleSpecs/iaq_sensors_api_mock.json" \
+> exampleSpecs/iaq_sensors_api_mock_ois.json
+```
+
+Run the conversion from OIS to `config.json`...
+
+```sh
+
+```
+
 
 ## 8. Deploy airnode protocol and link smart contract to API
 
