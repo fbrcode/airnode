@@ -1,0 +1,247 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "IAQ Sensors Data - OpenAPI Specification",
+    "description": "This is a mock for IAQ sensors data API.",
+    "termsOfService": "http://localhost/tos/",
+    "contact": {
+      "name": "Fabio Bressler",
+      "email": "fabio.bressler@gmail.com"
+    },
+    "license": {
+      "name": "MIT Licese",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "version": "0.1"
+  },
+  "externalDocs": {
+    "description": "Find out more about this project",
+    "url": "https://inveniam.io/iaq-sensors"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3333/v1"
+    }
+  ],
+  "tags": [
+    {
+      "name": "IAQ Sensors",
+      "description": "Everything related to Indoor Air Quality (IAQ) sensors",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://inveniam.io/iaq-sensors"
+      }
+    },
+    {
+      "name": "Sensor",
+      "description": "Sensor information details"
+    }
+  ],
+  "paths": {
+    "/sensor/{sensorUUID}": {
+      "get": {
+        "tags": [
+          "Sensor"
+        ],
+        "summary": "Find pet by ID",
+        "description": "Returns a single sensor data",
+        "operationId": "getSensorById",
+        "parameters": [
+          {
+            "name": "sensorUUID",
+            "in": "path",
+            "description": "Sensor's universal unique identification to return",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Sensor"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid UUID supplied"
+          },
+          "404": {
+            "description": "Sensor not found"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SensorData": {
+        "type": "object",
+        "properties": {
+          "lastTimestamp": {
+            "type": "string",
+            "example": "2021-02-01 00:00:00"
+          },
+          "score": {
+            "type": "number",
+            "description": "Device score",
+            "example": 90.8
+          },
+          "scoreUnit": {
+            "type": "string",
+            "example": "device"
+          },
+          "temperature": {
+            "type": "number",
+            "example": 77.9
+          },
+          "temperatureUnit": {
+            "type": "string",
+            "example": "F"
+          },
+          "humidity": {
+            "type": "number",
+            "example": 33.9
+          },
+          "humidityUnit": {
+            "type": "string",
+            "example": "g/m3"
+          },
+          "co2": {
+            "type": "number",
+            "description": "Carbon Dioxide",
+            "example": 408.8
+          },
+          "co2Unit": {
+            "type": "string",
+            "description": "Parts Per Million",
+            "example": "ppm"
+          },
+          "voc": {
+            "type": "number",
+            "description": "Volatile Organic Compound",
+            "example": 148
+          },
+          "vocUnit": {
+            "type": "string",
+            "description": "Parts Per Million",
+            "example": "ppm"
+          },
+          "pm25": {
+            "type": "number",
+            "description": "Particulate Matter",
+            "example": 2.7
+          },
+          "pm25Unit": {
+            "type": "string",
+            "example": "2.5 micrometers"
+          },
+          "light": {
+            "type": "number",
+            "description": "Light intensity",
+            "example": 12.8
+          },
+          "lightUnit": {
+            "type": "string",
+            "example": "lumens"
+          },
+          "noise": {
+            "type": "number",
+            "description": "Noise intensity",
+            "example": 62.2
+          },
+          "noiseUnit": {
+            "type": "string",
+            "description": "Decibels",
+            "example": "dB"
+          }
+        }
+      },
+      "Sensor": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "example": "31d42f54-ef12-4c83-a5be-19a87368b648",
+            "description": "https://www.uuidgenerator.net/version4"
+          },
+          "qrCode": {
+            "type": "string",
+            "example": "qr##code##sample##data"
+          },
+          "sensorData": {
+            "$ref": "#/components/schemas/SensorData"
+          },
+          "location": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "category": {
+            "$ref": "#/components/schemas/Category"
+          },
+          "status": {
+            "type": "string",
+            "description": "sensor current status",
+            "enum": [
+              "active",
+              "inactive",
+              "maintenance",
+              "destroyed"
+            ]
+          }
+        }
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "example": "Basic Type"
+          }
+        }
+      },
+      "Location": {
+        "type": "object",
+        "properties": {
+          "street": {
+            "type": "string",
+            "example": "123 Main Street"
+          },
+          "city": {
+            "type": "string",
+            "example": "Miami"
+          },
+          "state": {
+            "type": "string",
+            "example": "FL"
+          },
+          "zip": {
+            "type": "string",
+            "example": "33132"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "api_key",
+        "in": "header"
+      }
+    }
+  }
+}
