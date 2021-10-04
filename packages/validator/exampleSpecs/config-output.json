@@ -1,11 +1,6 @@
 {
   "valid": true,
-  "messages": [
-    {
-      "level": "warning",
-      "message": "version is not formatted correctly"
-    }
-  ],
+  "messages": [],
   "output": [
     {
       "id": "{FILL}",
@@ -21,8 +16,8 @@
         "securitySchemes": [
           {
             "name": "api_key",
-            "oisTitle": "IAQ Sensors Data - OpenAPI Specification",
-            "envName": "ss_IAQ Sensors Data - OpenAPI Specification_api_key"
+            "oisTitle": "aiq-sensor-api",
+            "envName": "ss_aiq-sensor-api_api_key"
           }
         ],
         "chainProviders": []
@@ -33,13 +28,15 @@
           {
             "endpointId": "{FILL}",
             "endpointName": "/sensor/{sensorUUID}",
-            "oisTitle": "IAQ Sensors Data - OpenAPI Specification"
+            "oisTitle": "aiq-sensor-api"
           }
         ]
       },
       "ois": [
         {
           "oisFormat": "1.0.0",
+          "title": "aiq-sensor-api",
+          "version": "0.0.1",
           "apiSpecifications": {
             "servers": [
               {
@@ -100,9 +97,7 @@
                 }
               ]
             }
-          ],
-          "title": "IAQ Sensors Data - OpenAPI Specification",
-          "version": "0.1"
+          ]
         }
       ]
     }
