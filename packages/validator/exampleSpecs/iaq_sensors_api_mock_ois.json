@@ -1,5 +1,7 @@
 {
   "oisFormat": "1.0.0",
+  "title": "aiq-sensor-api",
+  "version": "0.0.1",
   "apiSpecifications": {
     "servers": [
       {
@@ -60,7 +62,5 @@
         }
       ]
     }
-  ],
-  "title": "IAQ Sensors Data - OpenAPI Specification",
-  "version": "0.1"
+  ]
 }
