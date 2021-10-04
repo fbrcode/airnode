@@ -1,0 +1,110 @@
+{
+  "valid": true,
+  "messages": [
+    {
+      "level": "warning",
+      "message": "version is not formatted correctly"
+    }
+  ],
+  "output": [
+    {
+      "id": "{FILL}",
+      "nodeSettings": {
+        "nodeVersion": "{FILL}",
+        "cloudProvider": "aws",
+        "region": "{FILL}",
+        "stage": "{FILL}",
+        "logFormat": "{FILL}",
+        "logLevel": "{FILL}"
+      },
+      "environment": {
+        "securitySchemes": [
+          {
+            "name": "api_key",
+            "oisTitle": "IAQ Sensors Data - OpenAPI Specification",
+            "envName": "ss_IAQ Sensors Data - OpenAPI Specification_api_key"
+          }
+        ],
+        "chainProviders": []
+      },
+      "chains": [],
+      "triggers": {
+        "request": [
+          {
+            "endpointId": "{FILL}",
+            "endpointName": "/sensor/{sensorUUID}",
+            "oisTitle": "IAQ Sensors Data - OpenAPI Specification"
+          }
+        ]
+      },
+      "ois": [
+        {
+          "oisFormat": "1.0.0",
+          "apiSpecifications": {
+            "servers": [
+              {
+                "url": "http://localhost:3333/v1"
+              }
+            ],
+            "security": {
+              "api_key": []
+            },
+            "components": {
+              "securitySchemes": {
+                "api_key": {
+                  "type": "apiKey",
+                  "in": "header",
+                  "name": "api_key"
+                }
+              }
+            },
+            "paths": {
+              "/sensor/{sensorUUID}": {
+                "get": {
+                  "parameters": [
+                    {
+                      "name": "sensorUUID",
+                      "in": "path"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "endpoints": [
+            {
+              "name": "/sensor/{sensorUUID}",
+              "operation": {
+                "method": "get",
+                "path": "/sensor/{sensorUUID}"
+              },
+              "reservedParameters": [
+                {
+                  "name": "_type"
+                },
+                {
+                  "name": "_path"
+                },
+                {
+                  "name": "_times"
+                }
+              ],
+              "fixedOperationParameters": [],
+              "parameters": [
+                {
+                  "name": "sensorUUID",
+                  "operationParameter": {
+                    "name": "sensorUUID",
+                    "in": "path"
+                  }
+                }
+              ]
+            }
+          ],
+          "title": "IAQ Sensors Data - OpenAPI Specification",
+          "version": "0.1"
+        }
+      ]
+    }
+  ]
+}
