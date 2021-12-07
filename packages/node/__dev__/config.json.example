@@ -1,4 +1,19 @@
 {
+  "nodeSettings": {
+    "cloudProvider": "local",
+    "airnodeWalletMnemonic": "${AIRNODE_WALLET_MNEMONIC}",
+    "httpGateway": {
+      "enabled": false
+    },
+    "heartbeat": {
+      "enabled": false
+    },
+    "logFormat": "plain",
+    "logLevel": "INFO",
+    "nodeVersion": "0.1.0",
+    "region": "us-east-1",
+    "stage": "dev"
+  },
   "chains": [
     {
       "airnodeAdmin": "0x5e0051B74bb4006480A1b548af9F1F0e0954F410",
@@ -17,21 +32,6 @@
       "type": "evm"
     }
   ],
-  "nodeSettings": {
-    "cloudProvider": "local",
-    "airnodeWalletMnemonic": "${AIRNODE_WALLET_MNEMONIC}",
-    "httpGateway": {
-      "enabled": false
-    },
-    "heartbeat": {
-      "enabled": false
-    },
-    "logFormat": "plain",
-    "logLevel": "INFO",
-    "nodeVersion": "0.1.0",
-    "region": "us-east-1",
-    "stage": "dev"
-  },
   "triggers": {
     "request": [
       {

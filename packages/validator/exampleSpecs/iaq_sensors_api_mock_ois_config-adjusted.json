@@ -1,0 +1,99 @@
+{
+  "id": "{FILL}",
+  "nodeSettings": {
+    "cloudProvider": "aws",
+    "logFormat": "{FILL}",
+    "logLevel": "{FILL}",
+    "nodeVersion": "{FILL}",
+    "region": "{FILL}",
+    "stage": "{FILL}"
+  },
+  "environment": {
+    "securitySchemes": [
+      {
+        "name": "api_key",
+        "oisTitle": "aiq-sensor-api",
+        "envName": "ss_aiq-sensor-api_api_key"
+      }
+    ],
+    "chainProviders": []
+  },
+  "chains": [],
+  "triggers": {
+    "request": [
+      {
+        "endpointId": "{FILL}",
+        "oisTitle": "aiq-sensor-api",
+        "endpointName": "/sensor/{sensorUUID}"
+      }
+    ]
+  },
+  "ois": [
+    {
+      "oisFormat": "1.0.0",
+      "title": "aiq-sensor-api",
+      "version": "0.0.1",
+      "apiSpecifications": {
+        "servers": [
+          {
+            "url": "http://localhost:3333/v1"
+          }
+        ],
+        "security": {
+          "api_key": []
+        },
+        "components": {
+          "securitySchemes": {
+            "api_key": {
+              "type": "apiKey",
+              "in": "header",
+              "name": "api_key"
+            }
+          }
+        },
+        "paths": {
+          "/sensor/{sensorUUID}": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "sensorUUID",
+                  "in": "path"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "endpoints": [
+        {
+          "name": "/sensor/{sensorUUID}",
+          "operation": {
+            "method": "get",
+            "path": "/sensor/{sensorUUID}"
+          },
+          "reservedParameters": [
+            {
+              "name": "_type"
+            },
+            {
+              "name": "_path"
+            },
+            {
+              "name": "_times"
+            }
+          ],
+          "fixedOperationParameters": [],
+          "parameters": [
+            {
+              "name": "sensorUUID",
+              "operationParameter": {
+                "name": "sensorUUID",
+                "in": "path"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
